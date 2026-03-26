@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#c7ebd2",
+              "outline": "#727973",
+              "on-secondary-fixed-variant": "#2a4d40",
+              "on-secondary-container": "#466a5b",
+              "on-error-container": "#93000a",
+              "background": "#fbf9f4",
+              "tertiary-fixed": "#ffdcc2",
+              "surface-container-highest": "#e4e2dd",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f5f3ee",
+              "on-primary-fixed": "#012112",
+              "primary-fixed-dim": "#accfb7",
+              "surface-variant": "#e4e2dd",
+              "on-primary-container": "#9bbda6",
+              "on-tertiary-fixed-variant": "#653e1b",
+              "surface": "#fbf9f4",
+              "surface-container": "#f0eee9",
+              "primary-container": "#2e4d3b",
+              "inverse-on-surface": "#f2f1ec",
+              "on-primary": "#ffffff",
+              "on-surface": "#1b1c19",
+              "on-surface-variant": "#424843",
+              "secondary-container": "#c1e8d6",
+              "inverse-primary": "#accfb7",
+              "on-secondary-fixed": "#002116",
+              "outline-variant": "#c2c8c1",
+              "error": "#ba1a1a",
+              "primary": "#173626",
+              "tertiary-fixed-dim": "#f4bb8e",
+              "tertiary-container": "#653e1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae8e3",
+              "surface-dim": "#dbdad5",
+              "on-tertiary-fixed": "#2e1500",
+              "on-background": "#1b1c19",
+              "on-tertiary-container": "#e1aa7e",
+              "inverse-surface": "#30312e",
+              "on-primary-fixed-variant": "#2e4d3b",
+              "tertiary": "#4a2806",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#a8cfbd",
+              "secondary": "#426657",
+              "surface-tint": "#466552",
+              "secondary-fixed": "#c4ebd9",
+              "error-container": "#ffdad6",
+              "surface-bright": "#fbf9f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #c2c8c1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] font-bold text-2xl text-[#173626]">The Living Laboratory</div>
+<div class="hidden md:flex items-center gap-8 font-['Newsreader'] tracking-tight text-lg">
+<a class="text-[#466a5b] opacity-70 hover:opacity-100 transition-opacity" href="#">Research</a>
+<a class="text-[#173626] border-b-2 border-[#173626] pb-1" href="#">Projects</a>
+<a class="text-[#466a5b] opacity-70 hover:opacity-100 transition-opacity" href="#">Publications</a>
+<a class="text-[#466a5b] opacity-70 hover:opacity-100 transition-opacity" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label text-sm font-medium hover:opacity-80 transition-opacity active:scale-95 transition-transform">Contact</button>
+<span class="material-symbols-outlined text-[#173626] cursor-pointer" data-icon="menu">menu</span>
+</div>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-24 max-w-4xl">
+<span class="font-label text-sm uppercase tracking-widest text-tertiary mb-4 block">Archive &amp; Exploration</span>
+<h1 class="font-headline text-6xl md:text-7xl font-bold tracking-tight text-primary mb-8 leading-[1.1]">
+                Synthesizing the <span class="italic font-normal">Complexities</span> of Biological Systems.
+            </h1>
+<div class="bg-tertiary-container/5 rounded-xl p-8 border-l-4 border-tertiary">
+<p class="font-headline italic text-xl text-on-surface-variant leading-relaxed">
+                    "Our research catalog serves as a dynamic repository of ongoing inquiries into cellular mechanics, metabolic pathways, and the engineering of novel biological substrates."
+                </p>
+</div>
+</header>
+<!-- Bento Grid: Featured Areas -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
+<div class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+<div class="relative p-12 h-full flex flex-col justify-end">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-bold mb-4 w-fit uppercase tracking-tighter">Primary Focus</span>
+<h2 class="font-headline text-4xl text-primary font-bold mb-4">Cell Signaling Networks</h2>
+<p class="text-on-surface-variant max-w-xl mb-6">Investigating the temporal dynamics of MAPK pathways in response to fluctuating environmental stressors. Our laboratory utilizes high-throughput imaging to map real-time cellular decision-making.</p>
+<div class="flex gap-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a senior research scientist in a laboratory setting with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs8vkEZQz0HfWQyS64ogfMIsOBSSjdOTfNALAJHQKoSSD9vmuvUD4D2TirUO69Ysk2iJ0HsRzqk5nSI3kFWOTegn4hJ978hI_LOZc7Il9mnTw25pxQy2_PEnFRVsa3zvl0P2gPp03-kuYbM2tzvFJ61MWINOt7P1mk2-2mxFItLK0VCvs7vd_Bx-WDPA6e68j-20kMbBHm-WgirJyQ0bHiTJUvDa8XuT1ZX7FtSMGgJE93bRO9RqXCXJVJXgKQs2h6idcvt8E3GEk"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-slate-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Female biology researcher portrait against a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs4Ql4EPsimfCJzNn96esdUmtVBWFqdp77Ssk5MjFVR2OHxbj_DE_ezDSVmDqdIISFMRU8RNmXnVirA0T_kO_NEfJmRPQwJ-TsGhAwysFDRl63Hc5O3szNwXNpQdaZQ6H2WbRlOUgCXYBzIrSuGNbTw7tKCVSV6eDZD5jcJynvnLJE6lBOhJ64Dp-KfDrcgy9R1Zhh2IqkNulRsTAFH_F9in7hL75mpHhesinFU5EoMofIsgh8nJzkWBIOv8k666LFPmZ38quwLog"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-surface-container-highest flex items-center justify-center text-xs font-bold">+12</div>
+</div>
+<button class="text-primary font-label text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+                            View Study <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary-container/10 rounded-full blur-3xl"></div>
+<div>
+<span class="material-symbols-outlined text-4xl mb-6" data-icon="biotech">biotech</span>
+<h3 class="font-headline text-3xl font-bold mb-4">Synthetic Biology</h3>
+<p class="opacity-80 text-sm leading-relaxed mb-8">Engineering microbial chasses for the carbon-neutral production of rare pharmaceutical precursors.</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-xs border-b border-on-primary/10 pb-2">
+<span>Active Projects</span>
+<span class="font-bold">08</span>
+</div>
+<div class="flex justify-between text-xs border-b border-on-primary/10 pb-2">
+<span>Patents Pending</span>
+<span class="font-bold">03</span>
+</div>
+<button class="w-full py-3 bg-on-primary text-primary rounded-full font-label text-sm font-bold mt-4 hover:bg-secondary-fixed transition-colors">Catalog Entry</button>
+</div>
+</div>
+</section>
+<!-- Project Catalog Grid -->
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline text-4xl font-bold text-primary italic">Active Investigations</h2>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-xs font-bold hover:bg-outline-variant/30">ALL</button>
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label text-xs font-bold">ONGOING</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-xs font-bold hover:bg-outline-variant/30">CONCLUDED</button>
+</div>
+</div>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-1 transition-all hover:bg-surface-container">
+<div class="aspect-video rounded-lg overflow-hidden mb-6 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Microscopic view of fluorescently labeled cells with vibrant green and blue patterns on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWihdzyQVcd6ey_Lm4L-MakZtmp0M7nISAa-gjO4lJ2mCkeRFuAB_21AR4S0O0iIET2hnxZGNZUEWa5-QA81eHCaBwR-ONxFUTb-LCOcPpanrZTQQkUHwOpRwmGbau_M5u6RWAhEJ0R1OT5jviw6e2nlN7AHd3PUw0EDth2JZLUmaNY2rE61VewtsAvtg8oYnkKFtDaatc1GUivvHAe_XRQCRF1NjetNul6ccGfRMZwCG9LChpKVy_v7oUF9BVn4Db9kvYKyOL_A4"/>
+</div>
+<div class="px-6 pb-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl font-bold text-primary leading-tight">Project: Viridian-9</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-secondary-container bg-secondary-container px-2 py-1 rounded">Phase III</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Quantifying the metabolic efficiency of genetically modified cyanobacteria in low-light aquatic environments.</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="block text-[10px] text-outline uppercase font-bold mb-1">Contributor</span>
+<span class="text-xs font-bold text-primary">Dr. Elias Vance</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="block text-[10px] text-outline uppercase font-bold mb-1">Data Volume</span>
+<span class="text-xs font-bold text-primary">4.2 TB</span>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[10px] font-bold text-outline">COMPLETION</span>
+<span class="text-[10px] font-bold text-primary">75%</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-1 transition-all hover:bg-surface-container">
+<div class="aspect-video rounded-lg overflow-hidden mb-6 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="High-tech laboratory equipment with glass pipettes and test tubes illuminated by soft teal light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBgkoeCRL6atw1Cn-6KCO050uBdM82UiBVVxbJxUJGt4gaXA6mfagssGxEYRyvEKLvZ-vJ3VLhznQzYDP9T9NVeNYyfHkBKGDVdAWitlhGdda-nk2cLJd2tgtdZO7dsYgWuQarCz0JTXjasc9ukDsd26FH21QeLWL8LlyfHLHHDFjItVMPJVaq4pxYC1zlJTMobwC-kLjBtwGG3qcPkQ5NLEi06hSHFjyb3nTk6WEMmkgjEi_yFvlVjiLjUEg8cEZLmpQrtco8Crs"/>
+</div>
+<div class="px-6 pb-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl font-bold text-primary leading-tight">Project: Myco-Strata</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-container px-2 py-1 rounded">Active</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Exploration of mycelium-based architectural substrates and their structural load-bearing capacity.</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="block text-[10px] text-outline uppercase font-bold mb-1">Contributor</span>
+<span class="text-xs font-bold text-primary">Sarah Chen</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="block text-[10px] text-outline uppercase font-bold mb-1">Specimens</span>
+<span class="text-xs font-bold text-primary">142 Isolates</span>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[30%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[10px] font-bold text-outline">COMPLETION</span>
+<span class="text-[10px] font-bold text-primary">30%</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-1 transition-all hover:bg-surface-container">
+<div class="aspect-video rounded-lg overflow-hidden mb-6 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Scientist looking through a microscope in a dim room with glowing green monitors in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSoNPrZBPjquaOfl4dVcQXhGI0d3djn2yeNYuvKuw59AOMnf-RqtOXnzJGfqFMyXiDe3TQNPHn0E58g8ctlPTf8x9_Mw96-e03y6kg0h1FYKsw8A4wMZYuH2jztbpb4N96czb3WQiUmUeGeYS6-uLYHlV0uiZ3W1RrItCutMPgt1Y_W6teJhVUvsghY29j0az92Wz7tK7Iaz1Kn0LQ0HgWv5xZ3YLztDqytPxue5Guth55yYSqKgAYT9_6Nl8M22s14DKgBSsAORQ"/>
+</div>
+<div class="px-6 pb-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl font-bold text-primary leading-tight">Project: Syn-Neuro</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-secondary-container bg-secondary-container px-2 py-1 rounded">Observational</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Synthetic neurotransmitter mapping for next-generation bio-computational interfaces.</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="block text-[10px] text-outline uppercase font-bold mb-1">Contributor</span>
+<span class="text-xs font-bold text-primary">Marcus Thorne</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="block text-[10px] text-outline uppercase font-bold mb-1">Runtime</span>
+<span class="text-xs font-bold text-primary">12 Mo</span>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[10px] font-bold text-outline">COMPLETION</span>
+<span class="text-[10px] font-bold text-primary">92%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Informational Section -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-headline text-5xl font-bold text-primary mb-8 leading-tight">Methodology of <br/><span class="italic text-secondary">The Living Lab</span></h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="hub">hub</span>
+<div>
+<h4 class="font-bold text-primary mb-2">Systems Integration</h4>
+<p class="text-sm text-on-surface-variant">We treat biological components as modular systems, applying engineering principles to solve complex evolutionary bottlenecks.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="dataset">dataset</span>
+<div>
+<h4 class="font-bold text-primary mb-2">Data Transparency</h4>
+<p class="text-sm text-on-surface-variant">All project summaries and non-proprietary datasets are accessible to our institutional partners via encrypted nodes.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="eco">eco</span>
+<div>
+<h4 class="font-bold text-primary mb-2">Organic Ethics</h4>
+<p class="text-sm text-on-surface-variant">Maintaining a rigorous framework for the ethical development of chimeric and synthetic organisms.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-surface-container-low rounded-3xl -rotate-3 dot-grid opacity-20"></div>
+<div class="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="Abstract macro shot of organic cellular structures in deep green and teal with artistic blur and depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4KmF8VUz6ZwjmTa2NX7g47AlGOlpbZpyRf9x0y_qlm9yI2sdJ5Bllocc7pmCI5i_qcZN82DBAM-hEPzg9Z9xscjLfFBUHMkbeS0yPTQs9783BAWoRE5H0gSfnvHGBJ44UZejbWBB80hjOHiSo4H0rjzWQbc3lGag947upgMEsPXeRDgHnAPKe26F-_X-i3hKe_KfuzHz5tJlaH0soo90o3JqYa4rKMNwyXB4aSkmncSWWd1Wu1nLa2XF68w3uoJOTmhcbJZDZUL0"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+<div class="absolute bottom-8 left-8 bg-surface-container-lowest/90 backdrop-blur p-6 rounded-xl max-w-[240px]">
+<p class="font-headline italic text-primary text-lg">"The intersection of code and cell is where the next century is being written."</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#f5f3ee] rounded-t-3xl mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] italic text-xl text-[#173626]">The Living Laboratory</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b]">
+<a class="opacity-70 hover:text-[#173626] transition-colors hover:underline decoration-[#173626]/20" href="#">Privacy Policy</a>
+<a class="opacity-70 hover:text-[#173626] transition-colors hover:underline decoration-[#173626]/20" href="#">Institutional Disclosure</a>
+<a class="opacity-70 hover:text-[#173626] transition-colors hover:underline decoration-[#173626]/20" href="#">Data Ethics</a>
+</div>
+<div class="text-[#466a5b] opacity-70 font-['Manrope'] text-sm text-center md:text-right">
+                © 2024 Systems Biology Research Lab. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

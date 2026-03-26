@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data &amp; Insights | The Living Laboratory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#c7ebd2",
+              "outline": "#727973",
+              "on-secondary-fixed-variant": "#2a4d40",
+              "on-secondary-container": "#466a5b",
+              "on-error-container": "#93000a",
+              "background": "#fbf9f4",
+              "tertiary-fixed": "#ffdcc2",
+              "surface-container-highest": "#e4e2dd",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f5f3ee",
+              "on-primary-fixed": "#012112",
+              "primary-fixed-dim": "#accfb7",
+              "surface-variant": "#e4e2dd",
+              "on-primary-container": "#9bbda6",
+              "on-tertiary-fixed-variant": "#653e1b",
+              "surface": "#fbf9f4",
+              "surface-container": "#f0eee9",
+              "primary-container": "#2e4d3b",
+              "inverse-on-surface": "#f2f1ec",
+              "on-primary": "#ffffff",
+              "on-surface": "#1b1c19",
+              "on-surface-variant": "#424843",
+              "secondary-container": "#c1e8d6",
+              "inverse-primary": "#accfb7",
+              "on-secondary-fixed": "#002116",
+              "outline-variant": "#c2c8c1",
+              "error": "#ba1a1a",
+              "primary": "#173626",
+              "tertiary-fixed-dim": "#f4bb8e",
+              "tertiary-container": "#653e1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae8e3",
+              "surface-dim": "#dbdad5",
+              "on-tertiary-fixed": "#2e1500",
+              "on-background": "#1b1c19",
+              "on-tertiary-container": "#e1aa7e",
+              "inverse-surface": "#30312e",
+              "on-primary-fixed-variant": "#2e4d3b",
+              "tertiary": "#4a2806",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#a8cfbd",
+              "secondary": "#426657",
+              "surface-tint": "#466552",
+              "secondary-fixed": "#c4ebd9",
+              "error-container": "#ffdad6",
+              "surface-bright": "#fbf9f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #c2c8c1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .specimen-card {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .specimen-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] font-bold text-2xl text-[#173626] dark:text-[#c1e8d6]">
+                The Living Laboratory
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] transition-opacity duration-300" href="#">Research</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] transition-opacity duration-300" href="#">Projects</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] transition-opacity duration-300" href="#">Publications</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#173626] dark:text-[#c1e8d6] border-b-2 border-[#173626] dark:border-[#c1e8d6] pb-1" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 rounded-full font-label text-sm uppercase tracking-widest hover:opacity-80 transition-opacity active:scale-95">
+                    Contact
+                </button>
+<button class="text-[#173626] p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-3xl">
+<span class="font-label text-sm uppercase tracking-[0.3em] text-tertiary mb-4 block">Analytical Repository</span>
+<h1 class="font-headline text-6xl md:text-7xl font-bold tracking-tight text-primary leading-tight">
+                        Systems Biology <br/><span class="italic font-normal">Data &amp; Insights</span>
+</h1>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-low px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Live Feed: Active</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Dashboard -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Primary Visualization: Gene Interaction Network -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 relative overflow-hidden border border-outline-variant/20">
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="font-headline text-2xl font-bold text-primary mb-1">Gene Interaction Topology</h3>
+<p class="font-body text-sm text-on-surface-variant">Real-time mapping of protein-protein interaction networks in <i>Arabidopsis thaliana</i>.</p>
+</div>
+<div class="flex gap-2">
+<span class="bg-secondary-fixed px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-tighter text-on-secondary-fixed">Visual Model 04-B</span>
+</div>
+</div>
+<!-- Mock Visualization Element -->
+<div class="h-[400px] flex items-center justify-center relative">
+<div class="absolute w-full h-full flex items-center justify-center">
+<!-- SVG Interaction Map Mock -->
+<svg class="w-full h-full opacity-40" viewbox="0 0 400 200">
+<circle class="text-primary" cx="100" cy="50" fill="currentColor" r="4"></circle>
+<circle class="text-primary" cx="150" cy="120" fill="currentColor" r="6"></circle>
+<circle class="text-primary" cx="250" cy="80" fill="currentColor" r="3"></circle>
+<circle class="text-primary" cx="300" cy="150" fill="currentColor" r="5"></circle>
+<line class="text-outline-variant" stroke="currentColor" stroke-width="0.5" x1="100" x2="150" y1="50" y2="120"></line>
+<line class="text-outline-variant" stroke="currentColor" stroke-width="0.5" x1="150" x2="250" y1="120" y2="80"></line>
+<line class="text-outline-variant" stroke="currentColor" stroke-width="0.5" x1="250" x2="300" y1="80" y2="150"></line>
+</svg>
+</div>
+<!-- Central Specimen Focus -->
+<div class="relative w-64 h-64 rounded-full bg-primary-container/5 border border-primary/10 flex items-center justify-center">
+<img alt="" class="w-48 h-48 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="microscopic view of plant cell structure with glowing nucleus and intricate protein filaments in deep green and teal tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-vmKOQAJuGki_fmIKMe0Is9ygjot1iJFsRgOHoDyGiPoTHFyMFVXZWVXX7pT5TSeh8AQc2-O5CASQh8Otw_JWHz4nAqmQXjnGNI2xVsVjBmwyfPNh-28p6KR1E6UJuSlKZUXZkbkaPnPVaUm8dold7yvs3rWJbfADOrA3FVYVHy5aHwocCFCbx4cs783FALx6B8qfHa-R1s8zSuoUJmZvc7gU_CGxpqjRxk0LoDFuSbLmByS5LX1yMdQmEvSex4AnO4TqND816e8"/>
+</div>
+</div>
+<div class="mt-8 flex gap-8 border-t border-outline-variant/20 pt-6">
+<div>
+<span class="block font-label text-[10px] uppercase tracking-widest text-tertiary mb-1">Nodes Analyzed</span>
+<span class="font-headline text-3xl font-bold text-primary italic">14,204</span>
+</div>
+<div>
+<span class="block font-label text-[10px] uppercase tracking-widest text-tertiary mb-1">Clustering Coeff.</span>
+<span class="font-headline text-3xl font-bold text-primary italic">0.842</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Card: Active Observations -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="bg-primary text-on-primary rounded-xl p-8 flex-1 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="monitoring">monitoring</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 italic">Observation Stream</h3>
+<div class="space-y-4">
+<div class="p-4 bg-primary-container/50 rounded-lg">
+<span class="block font-label text-[10px] uppercase tracking-widest opacity-60 mb-1">14:22:04 — Server-04</span>
+<p class="font-body text-sm">Sequence alignment for Sample PRJ-992 completed with 98.4% accuracy.</p>
+</div>
+<div class="p-4 bg-primary-container/50 rounded-lg">
+<span class="block font-label text-[10px] uppercase tracking-widest opacity-60 mb-1">13:45:12 — Field Bio-Sensor</span>
+<p class="font-body text-sm">Elevated chlorophyll fluorescence detected in Sector G-12.</p>
+</div>
+</div>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container rounded-xl p-8">
+<h4 class="font-label text-xs uppercase tracking-widest mb-4 opacity-80">Quick Abstract</h4>
+<p class="font-headline italic text-lg leading-relaxed">
+                        "The transition from linear pathways to systemic feedback loops reveals a persistent architecture of resilience within biological networks."
+                    </p>
+<div class="mt-6 flex justify-between items-center">
+<span class="font-body text-xs">— Dr. Elara Vance, Head of Insights</span>
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+</div>
+<!-- Lower Row Metrics -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 specimen-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="dna">genetics</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Genomic Flux</h4>
+</div>
+<div class="h-24 flex items-end gap-1 mb-4">
+<div class="flex-1 bg-secondary-fixed-dim h-1/2 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-3/4 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-1/2 rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-full rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-2/3 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-1/2 rounded-t-sm"></div>
+</div>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                    Visualizing the metabolic throughput across standard test subjects over a 24-hour circadian cycle.
+                </p>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 specimen-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Pathway Density</h4>
+</div>
+<div class="space-y-3">
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-[85%]"></div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-[42%]"></div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-[67%]"></div>
+</div>
+</div>
+<div class="mt-6 flex justify-between">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Efficiency</span>
+<span class="font-body text-sm font-bold">85.4%</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 specimen-card overflow-hidden relative group">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-110 transition-transform duration-1000" data-alt="abstract scientific background with blurred laboratory glassware and blue-green biological textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiitDmBiFW0Lr0lLx2pvSLbtXbKKg7jhDsMz7B9Un9SHI58gLY0PYkbzEmDLhuZNnFdWOeX9KYRQE0qdKepx__l5YXMnm6CbR2e16BmAk88GsApvsUKAB-gq289qLciSkhdHgv5hr7EUQzhShR5TUmtfrNZznCIboWnFMlz0M8XOVzmQBw82qBA2o9766ogHPmSL7KGrxCA7kOW7euDrse7n9gr7fk6DQjaL5jToKm4M7nnaQJlNgOya0KNvcit75VusPLbu0QA-k"/>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-outline-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Research Papers</h4>
+</div>
+<p class="font-body text-sm text-on-surface mb-6">Access our latest peer-reviewed publications and technical datasets.</p>
+<button class="w-full py-3 border border-primary/20 rounded-full font-label text-xs uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                        View Archive
+                    </button>
+</div>
+</div>
+</div>
+<!-- Data Explorer Section -->
+<section class="mt-24">
+<div class="flex items-center gap-4 mb-12">
+<h2 class="font-headline text-4xl font-bold text-primary italic">Global Ecosystem Feeds</h2>
+<div class="flex-1 h-px bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<div class="p-8 bg-surface-container-low rounded-2xl border-l-4 border-primary">
+<span class="font-label text-xs uppercase tracking-widest text-primary block mb-2">Primary Node: Amazon Basin</span>
+<h5 class="font-headline text-2xl mb-4">Biodiversity Index Dynamics</h5>
+<p class="font-body text-on-surface-variant mb-6">Long-term tracking of species richness and genetic variance in protected sectors. Current data reflects post-seasonal migration patterns.</p>
+<div class="flex items-center gap-4">
+<div class="px-3 py-1 bg-surface-container-highest rounded-full font-body text-xs">Lat: -3.4653</div>
+<div class="px-3 py-1 bg-surface-container-highest rounded-full font-body text-xs">Long: -62.2159</div>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border-l-4 border-tertiary">
+<span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-2">Secondary Node: Baltic Sea</span>
+<h5 class="font-headline text-2xl mb-4">Salinity &amp; Microbial Shift</h5>
+<p class="font-body text-on-surface-variant mb-6">Observation of halotolerant bacterial colonies in response to desalination trends. Significant shifts observed in surface-level populations.</p>
+<div class="flex items-center gap-4">
+<div class="px-3 py-1 bg-surface-container-highest rounded-full font-body text-xs">Lat: 58.5953</div>
+<div class="px-3 py-1 bg-surface-container-highest rounded-full font-body text-xs">Long: 19.1724</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden min-h-[400px]">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="high-tech digital world map visualization with glowing data connection points and network lines in deep teal and blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9RNA33OClfdVz0edUFJgKDQNtbX-c7aJU9cCSD6V9KjG1UMadCIMzkqx1-R2dDGpB8DSyEBcTpT-X0Ay5bzFcaCubcrzJjYBzJ1k331oCDWVXcLqcqKChnb2Q73S9CbpWQzFJ9ADGB2NMZRWdgWKTwiAKB0pJNtJNbsnO8ksZzsC2_auWsKMhBoksRvzsGUHLx_D1wWyULKx8frlcPFLsycXxpAU2dMcodlWlCcSQO4MP8OjHfCFvm3fOLfQx0hdf-C4ZcDbQW5s"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-primary/80 to-transparent">
+<div class="flex justify-between items-end">
+<div>
+<h6 class="text-on-primary font-headline text-xl italic mb-1">Interactive Specimen Map</h6>
+<p class="text-on-primary/70 font-body text-sm">Select a node to initialize data stream</p>
+</div>
+<button class="p-4 bg-on-primary text-primary rounded-full hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f3ee] dark:bg-[#252622] w-full rounded-t-3xl mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] italic text-xl text-[#173626] dark:text-[#c1e8d6]">
+                The Living Laboratory
+            </div>
+<div class="flex flex-col md:flex-row items-center gap-8">
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] transition-colors" href="#">Institutional Disclosure</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] transition-colors" href="#">Data Ethics</a>
+</div>
+<div class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] dark:text-[#c1e8d6]">
+                © 2024 Systems Biology Research Lab. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

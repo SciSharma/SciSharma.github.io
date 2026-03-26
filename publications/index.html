@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#c7ebd2",
+              "outline": "#727973",
+              "on-secondary-fixed-variant": "#2a4d40",
+              "on-secondary-container": "#466a5b",
+              "on-error-container": "#93000a",
+              "background": "#fbf9f4",
+              "tertiary-fixed": "#ffdcc2",
+              "surface-container-highest": "#e4e2dd",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f5f3ee",
+              "on-primary-fixed": "#012112",
+              "primary-fixed-dim": "#accfb7",
+              "surface-variant": "#e4e2dd",
+              "on-primary-container": "#9bbda6",
+              "on-tertiary-fixed-variant": "#653e1b",
+              "surface": "#fbf9f4",
+              "surface-container": "#f0eee9",
+              "primary-container": "#2e4d3b",
+              "inverse-on-surface": "#f2f1ec",
+              "on-primary": "#ffffff",
+              "on-surface": "#1b1c19",
+              "on-surface-variant": "#424843",
+              "secondary-container": "#c1e8d6",
+              "inverse-primary": "#accfb7",
+              "on-secondary-fixed": "#002116",
+              "outline-variant": "#c2c8c1",
+              "error": "#ba1a1a",
+              "primary": "#173626",
+              "tertiary-fixed-dim": "#f4bb8e",
+              "tertiary-container": "#653e1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae8e3",
+              "surface-dim": "#dbdad5",
+              "on-tertiary-fixed": "#2e1500",
+              "on-background": "#1b1c19",
+              "on-tertiary-container": "#e1aa7e",
+              "inverse-surface": "#30312e",
+              "on-primary-fixed-variant": "#2e4d3b",
+              "tertiary": "#4a2806",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#a8cfbd",
+              "secondary": "#426657",
+              "surface-tint": "#466552",
+              "secondary-fixed": "#c4ebd9",
+              "error-container": "#ffdad6",
+              "surface-bright": "#fbf9f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #c2c8c1 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] font-bold text-2xl text-[#173626] dark:text-[#c1e8d6]">The Living Laboratory</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] hover:opacity-80 transition-opacity duration-300" href="#">Research</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] hover:opacity-80 transition-opacity duration-300" href="#">Projects</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#173626] dark:text-[#c1e8d6] border-b-2 border-[#173626] dark:border-[#c1e8d6] pb-1 hover:opacity-80 transition-opacity duration-300" href="#">Publications</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] hover:opacity-80 transition-opacity duration-300" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 rounded-full font-label text-sm uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all">
+                    Contact
+                </button>
+<span class="material-symbols-outlined text-[#173626] cursor-pointer" data-icon="menu">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 min-h-screen">
+<!-- Hero / Header Section -->
+<section class="px-8 max-w-screen-2xl mx-auto mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="font-label text-tertiary uppercase tracking-[0.2em] text-xs mb-4 block">Scientific Archive</span>
+<h1 class="font-headline text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none mb-8">Selected <br/><span class="italic text-primary">Publications</span></h1>
+<p class="font-body text-on-surface-variant text-xl max-w-lg leading-relaxed">
+                        A chronological and thematic collection of our research output in systemic biology, molecular architecture, and ecological frameworks.
+                    </p>
+</div>
+<div class="w-full md:w-auto">
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden">
+<div class="absolute inset-0 dot-grid"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<span class="font-label text-xs uppercase text-on-secondary-container opacity-60">Total citations</span>
+<span class="font-headline text-4xl text-primary font-bold">4,829+</span>
+<span class="font-label text-xs text-on-surface-variant mt-2 underline cursor-pointer">View Google Scholar Profile</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter Bar -->
+<section class="px-8 max-w-screen-2xl mx-auto mb-16">
+<div class="bg-surface-container-high p-4 rounded-full flex flex-col md:flex-row items-center gap-4">
+<div class="flex-1 w-full relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full py-3 pl-12 pr-6 focus:ring-2 focus:ring-primary/20 text-on-surface" placeholder="Search by paper title, keyword, or co-author..." type="text"/>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto no-scrollbar pb-2 md:pb-0">
+<div class="bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-label cursor-pointer whitespace-nowrap">All Years</div>
+<div class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-label cursor-pointer whitespace-nowrap hover:bg-white transition-colors">2024</div>
+<div class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-label cursor-pointer whitespace-nowrap hover:bg-white transition-colors">2023</div>
+<div class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-label cursor-pointer whitespace-nowrap hover:bg-white transition-colors">2022</div>
+<div class="h-6 w-px bg-outline-variant/30 mx-2"></div>
+<div class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-label cursor-pointer whitespace-nowrap flex items-center gap-2">
+<span>Journal Type</span>
+<span class="material-symbols-outlined text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Publications List -->
+<section class="px-8 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 gap-12">
+<!-- Publication Item 1 -->
+<div class="group grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-8 pb-12 border-b border-outline-variant/20 hover:border-primary/20 transition-colors">
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-tertiary bg-tertiary-fixed px-3 py-1 rounded-full w-fit">Journal Article</span>
+<div class="text-on-surface-variant text-sm font-body">
+<span class="font-bold text-on-surface">Nature Genetics</span><br/>
+                            Vol 56, pp 112–124<br/>
+                            Published March 2024
+                        </div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="font-headline text-3xl md:text-4xl text-on-surface group-hover:text-primary transition-colors cursor-pointer">Synthesis of Synthetic Mycorrhizal Networks for Urban Reforestation</h2>
+<p class="font-body text-on-surface-variant leading-relaxed line-clamp-2">This study presents a novel framework for establishing engineered fungal networks within metropolitan soil structures to enhance nutrient cycling and tree longevity in high-density urban zones.</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Mycology</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Urban Planning</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Synthetic Biology</span>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-center gap-4">
+<a class="flex items-center gap-3 text-primary font-label text-sm font-bold group/link" href="#">
+<span>DOI: 10.1038/s41588</span>
+<span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary px-6 py-3 rounded-full flex items-center gap-2 transition-all w-fit">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="text-xs font-label uppercase tracking-widest">Full Text PDF</span>
+</button>
+</div>
+</div>
+<!-- Abstract Callout -->
+<div class="bg-tertiary-container text-on-tertiary-container p-12 rounded-2xl md:ml-24 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="relative z-10 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.3em] mb-4 block opacity-70">Research Spotlight</span>
+<blockquote class="font-headline italic text-2xl md:text-3xl leading-snug">
+                            "The intersection of algorithmic growth and biological reality requires a new vernacular—one where the laboratory notebook becomes a collaborative artifact between carbon and silicon."
+                        </blockquote>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="portrait of a senior scientist with glasses and a thoughtful expression in a library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnXO2T9f4FokFwgnZzi3h_gKzOkTOECCdKOW-1bwHV8xjG22Mktj0XdWnYXeuc3Nk2hoj541kacpALc5ulAmtlouSQBNLSIEwDNdbE3gGroc9a21fAMMn7G95DPq4TNjr8wHtQSiqp86Glb_r_e_FCXfEsg0IlaTHWxZNDNjHX5ULgT0iXL3dry2YK5M-gptpU9zBJW-OrRwyixX5M4bYMtlFXz-uYaO4C6POJ_2LlFbb8wz-uvmGeo1wqNRdzHx1zQ84tLWUX7Qk"/>
+</div>
+<div>
+<p class="font-label text-sm font-bold">Dr. Alistair Thorne</p>
+<p class="font-label text-xs opacity-70">Lead Researcher, Systems Architecture</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Publication Item 2 -->
+<div class="group grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-8 pb-12 border-b border-outline-variant/20 hover:border-primary/20 transition-colors">
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-tertiary bg-tertiary-fixed px-3 py-1 rounded-full w-fit">Conference Paper</span>
+<div class="text-on-surface-variant text-sm font-body">
+<span class="font-bold text-on-surface">ICLR 2023</span><br/>
+                            Kigali, Rwanda<br/>
+                            Presented May 2023
+                        </div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="font-headline text-3xl md:text-4xl text-on-surface group-hover:text-primary transition-colors cursor-pointer">Latent Space Biome: Predicting Adaptation in Degraded Soils</h2>
+<p class="font-body text-on-surface-variant leading-relaxed line-clamp-2">Using generative adversarial networks to model microbial succession patterns in soils contaminated by industrial heavy metals over a 50-year projection.</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Machine Learning</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Microbiology</span>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-center gap-4">
+<a class="flex items-center gap-3 text-primary font-label text-sm font-bold group/link" href="#">
+<span>DOI: 10.1101/2023.05</span>
+<span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary px-6 py-3 rounded-full flex items-center gap-2 transition-all w-fit">
+<span class="material-symbols-outlined text-lg" data-icon="open_in_new">open_in_new</span>
+<span class="text-xs font-label uppercase tracking-widest">arXiv Link</span>
+</button>
+</div>
+</div>
+<!-- Publication Item 3 -->
+<div class="group grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-8 pb-12 border-b border-outline-variant/20 hover:border-primary/20 transition-colors">
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-tertiary bg-tertiary-fixed px-3 py-1 rounded-full w-fit">Review Paper</span>
+<div class="text-on-surface-variant text-sm font-body">
+<span class="font-bold text-on-surface">Cell Reports</span><br/>
+                            Vol 12, Issue 4<br/>
+                            Published Nov 2022
+                        </div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="font-headline text-3xl md:text-4xl text-on-surface group-hover:text-primary transition-colors cursor-pointer">The Metabolic Clock: Oscillatory Dynamics in Bio-Synthetic Hybrids</h2>
+<p class="font-body text-on-surface-variant leading-relaxed line-clamp-2">A comprehensive review of rhythmic chemical signaling within lab-grown organic interfaces and their potential for long-term data storage.</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Bio-Computation</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-label uppercase tracking-tighter">Metabolism</span>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-center gap-4">
+<a class="flex items-center gap-3 text-primary font-label text-sm font-bold group/link" href="#">
+<span>DOI: 10.1016/j.celrep</span>
+<span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary px-6 py-3 rounded-full flex items-center gap-2 transition-all w-fit">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="text-xs font-label uppercase tracking-widest">Full Text PDF</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination / Load More -->
+<section class="px-8 max-w-screen-2xl mx-auto mt-16 flex justify-center">
+<button class="group flex flex-col items-center gap-2 hover:opacity-70 transition-opacity">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant">Scroll for more</span>
+<span class="material-symbols-outlined text-primary animate-bounce" data-icon="expand_more">expand_more</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-3xl mt-24 bg-[#f5f3ee] dark:bg-[#252622]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8">
+<div class="font-['Newsreader'] italic text-xl text-[#173626] dark:text-[#c1e8d6]">The Living Laboratory</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] dark:hover:text-white transition-colors" href="#">Institutional Disclosure</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] dark:hover:text-white transition-colors" href="#">Data Ethics</a>
+</div>
+<div class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] dark:text-[#c1e8d6] text-center md:text-right">
+                © 2024 Systems Biology Research Lab. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

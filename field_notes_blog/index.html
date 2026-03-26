@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Field Notes | The Living Laboratory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f5f3ee",
+              "on-background": "#1b1c19",
+              "inverse-on-surface": "#f2f1ec",
+              "tertiary-container": "#653e1b",
+              "surface": "#fbf9f4",
+              "surface-container": "#f0eee9",
+              "surface-bright": "#fbf9f4",
+              "error-container": "#ffdad6",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#f4bb8e",
+              "on-tertiary-container": "#e1aa7e",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#653e1b",
+              "on-tertiary-fixed": "#2e1500",
+              "on-surface-variant": "#424843",
+              "outline": "#727973",
+              "primary-fixed": "#c7ebd2",
+              "background": "#fbf9f4",
+              "on-primary": "#ffffff",
+              "surface-dim": "#dbdad5",
+              "tertiary": "#4a2806",
+              "on-secondary-container": "#466a5b",
+              "surface-variant": "#e4e2dd",
+              "secondary-container": "#c1e8d6",
+              "secondary-fixed": "#c4ebd9",
+              "on-primary-fixed-variant": "#2e4d3b",
+              "inverse-surface": "#30312e",
+              "on-secondary-fixed": "#002116",
+              "surface-tint": "#466552",
+              "secondary": "#426657",
+              "on-primary-container": "#9bbda6",
+              "on-surface": "#1b1c19",
+              "on-secondary-fixed-variant": "#2a4d40",
+              "on-secondary": "#ffffff",
+              "primary": "#173626",
+              "outline-variant": "#c2c8c1",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#ffdcc2",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#a8cfbd",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#accfb7",
+              "surface-container-highest": "#e4e2dd",
+              "surface-container-high": "#eae8e3",
+              "on-primary-fixed": "#012112",
+              "primary-container": "#2e4d3b",
+              "inverse-primary": "#accfb7"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .dot-grid {
+        background-image: radial-gradient(circle, #c2c8c1 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.15;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] font-bold text-2xl text-[#173626] dark:text-[#c1e8d6]">
+                The Living Laboratory
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] transition-opacity duration-300" href="#">Research</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] transition-opacity duration-300" href="#">Projects</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] dark:text-[#a0a39d] hover:text-[#173626] dark:hover:text-[#ffffff] transition-opacity duration-300" href="#">Publications</a>
+<a class="font-['Newsreader'] tracking-tight text-lg text-[#173626] dark:text-[#c1e8d6] border-b-2 border-[#173626] dark:border-[#c1e8d6] pb-1" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] hover:opacity-80 active:scale-95 transition-all">Contact</button>
+<span class="material-symbols-outlined text-[#173626] cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 max-w-screen-2xl mx-auto px-8">
+<!-- Hero Featured Post -->
+<section class="mt-12 mb-24 grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-xl bg-surface-container-low relative">
+<div class="lg:col-span-7 relative h-[400px] lg:h-[600px]">
+<img alt="Abstract biological visualization" class="absolute inset-0 w-full h-full object-cover" data-alt="Intricate microscopic visualization of a fluorescent neural network with glowing teal and deep green pathways on a dark organic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA52H7HAQwo_9-Vc8y0nglVIPiLcpB2OG60XoHueoud8yHK4ILcuO_brTO04V_7mVpxMekDSfr_qfCQ-Q-LHpq33ZovqZSERojl1jp_kpG7hHVYaObrDIcElxznNpd93lUaMrM9gqj-y-7LpprGca4gL_z5tHIDog8J9z_erG277gQd47YP9Wb9TOYJq6UNAdz8JcQKivEaisgoXZV5qbqwAumt0XLwnfMm90RVgMABoxm1j32iRzEYW7uOgKJM0uPPW9VVjlqY5rM"/>
+</div>
+<div class="lg:col-span-5 p-12 lg:p-16 flex flex-col justify-center relative">
+<div class="absolute inset-0 dot-grid pointer-events-none"></div>
+<div class="relative z-10">
+<span class="font-label text-sm uppercase tracking-widest text-tertiary mb-4 block">Featured Journal Entry</span>
+<h1 class="font-headline text-5xl lg:text-6xl font-bold text-primary leading-tight tracking-tight mb-6 italic">
+                        The Architecture of Resilience in Mycelial Networks
+                    </h1>
+<p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed italic">
+                        Exploring how decentralized fungal systems inform our understanding of metabolic stability and systemic failure under environmental stress.
+                    </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Professional portrait of a scientist in a natural light setting with a soft blurred greenhouse background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUzsuzKGqpmhvIVZB7R6Y2uUHi5YyYfPkd35lTmddSle2CZelTBzaKhhnVDMqIUJtROE_KMmoEGFmcIHcusPm3dff0VwAaW5mX8ScvC90nzoB_OX3qCicjgL0VaIkPqSxvkMh0WCRs65uMA_aWo-xgcaADQ7t_7fCcAyyzFwigrrG78Fty7KJrPAmyb43yHCaAC9lmYTnQO8VLEN3SApU93EQXPtvYIibN2OMZ3PBjib3s01nF-mo7eij4Jk-FMerd1eD1wGUIjKM"/>
+</div>
+<div>
+<p class="font-label font-bold text-primary">Dr. Elias Thorne</p>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Oct 24, 2024 • 12 min read</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                        Read Full Abstract
+                    </button>
+</div>
+</div>
+</section>
+<!-- Main Feed -->
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar / Cataloging -->
+<aside class="w-full lg:w-64 shrink-0">
+<div class="sticky top-32 space-y-12">
+<div>
+<h3 class="font-headline text-2xl font-bold text-primary mb-6">Taxonomy</h3>
+<ul class="space-y-4">
+<li><a class="font-label text-sm flex justify-between items-center text-on-surface-variant hover:text-primary transition-colors" href="#">Synthetic Biology <span class="text-xs opacity-50">14</span></a></li>
+<li><a class="font-label text-sm flex justify-between items-center text-primary font-bold" href="#">Systems Modeling <span class="text-xs opacity-50">08</span></a></li>
+<li><a class="font-label text-sm flex justify-between items-center text-on-surface-variant hover:text-primary transition-colors" href="#">Ecological Dynamics <span class="text-xs opacity-50">21</span></a></li>
+<li><a class="font-label text-sm flex justify-between items-center text-on-surface-variant hover:text-primary transition-colors" href="#">Computational Genetics <span class="text-xs opacity-50">12</span></a></li>
+<li><a class="font-label text-sm flex justify-between items-center text-on-surface-variant hover:text-primary transition-colors" href="#">Lab Protocols <span class="text-xs opacity-50">05</span></a></li>
+</ul>
+</div>
+<div class="p-6 bg-tertiary-container text-on-tertiary rounded-xl relative overflow-hidden">
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+<h4 class="font-headline italic text-xl mb-3 relative z-10">The Observer's Bias</h4>
+<p class="font-body text-xs italic opacity-80 leading-loose relative z-10">
+                            "In systems biology, we don't just study the parts; we study the conversation between them. The difficulty is that the scientist is always part of the room."
+                        </p>
+</div>
+</div>
+</aside>
+<!-- Grid of Field Notes -->
+<section class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+<!-- Post Card 1 -->
+<article class="group">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Laboratory glassware" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Cinematic shot of precision laboratory glassware filled with emerald green bioluminescent fluid in a dimly lit modern lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEH79bYqbNejWDN1AGPKrH-atqiGSl0dGVeQ597haVZfnvF-PLv3C0JyLWW1UX9CZq-IA5GyVWg1B5ndnWTXYAGby3f0IR5Y7JWVATYqmMrHUvRW6zRl1nGhftu6IcssXXk6p3BIxBnp2tP48Y6GjwyoMP9oVHpzKRHY_cBKEzteMlfcYjRQTqDr85nC0NBcskA_kmrGaYY7lPT6x6VJokqu5MlhtsmqS37AwKNgaguPbhFSQmga3fAL48nan2_u5el63RA9Y3H90"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Synthetic Biology</span>
+<span class="text-xs text-on-surface-variant font-label">Sept 12, 2024</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary group-hover:text-secondary transition-colors leading-tight">
+                            Encoding Digital Memory into Microbial DNA
+                        </h2>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed line-clamp-3">
+                            New methodologies for long-term data storage using bacterial colonies as living hard drives. A look at the error-correction protocols found in nature.
+                        </p>
+</div>
+</article>
+<!-- Post Card 2 -->
+<article class="group">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Mountain ecosystem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Wide angle view of a sub-alpine meadow with complex topographic features and misty mountain peaks in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlcaAlboauFL_Kg5nMmj4a5nasH5DhZQEoIr9jpXyLSonP2iu57v7FkrkjzL-nzLukcYIvadFs98Knq_SgqhJBWbm8O_4huqTNNgL0FKKGPbXrq3zWyhroDuu3OK-VI6S6k5vjGSGV1MLrYudMBrMZAlo09tBXSvhGrswcjPQv5WEOa4BHKzRcAr__6l8Wau-CUoGLRpELU7k9DblY-Art_abh1ooyLYjKfpvWSXF2CzXX6TVzfc0j07EuUcLy97kVcCrcZiCcT5c"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Ecological Modeling</span>
+<span class="text-xs text-on-surface-variant font-label">Aug 28, 2024</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary group-hover:text-secondary transition-colors leading-tight">
+                            Phase Transitions in Alpine Flora Networks
+                        </h2>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed line-clamp-3">
+                            How climate-driven shifts create tipping points in plant-pollinator mutualism, modeled through stochastic differential equations.
+                        </p>
+</div>
+</article>
+<!-- Post Card 3 -->
+<article class="group">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Data visualization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of a screen displaying a complex 3D topological map of protein folding with vibrant color gradients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHDAnFwtCrs2qh2Jy_gtc7hpCUIN3URV101Hc9LpiDBx8BSGGtzUaWMKoT07FDpMNKtK-RUF2PasfInKmCAqTc0SjwiF8d2yOTWKIuHKv-Vw1l0ayVH3dmgm9WqwxC38LZ-VjgXeYU82wRZ-DS12yoHFVUfuaHp8N9yP0LPjkww4G2_nqnYymon2a78SsNMBx3j5OTPcEfO6dFxFu3K6LdeeaWqVJKLMyhuoJqKalJgYpgxR2zkfN4PhyGzp05XgWvk4IWhIk5rb8"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Computational Genetics</span>
+<span class="text-xs text-on-surface-variant font-label">Aug 05, 2024</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary group-hover:text-secondary transition-colors leading-tight">
+                            Predicting Protein Folding with Graph Neural Nets
+                        </h2>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed line-clamp-3">
+                            A field report on the latest iteration of our folding simulation, reducing computational overhead by 40% through recursive pruning.
+                        </p>
+</div>
+</article>
+<!-- Post Card 4 -->
+<article class="group">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Petri dish" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Overhead macro shot of a petri dish containing organic branching patterns in soft white and earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7RIXnQCijv8A_3ozg5KrT__yAcCQULzV1OmFA5mJ4q-w4v5I3EflgMXP-RvZv95S-2HwZvj_1nLAvSnIyIOtNXGeLVQ3XS6Fmhyfkp2orFRcjxH_cPDci-Tm2PjdU3Fzc4C9Xq_i_A8IGMkrg5I5NZ-C4iZa53QgHcK3LYqlTxK9T7JUpVunKZSsUDJJu-bfJoBXL33uA1b_TNEx90VWs-OYu0FNWf-3qxkS5Yrde78UHMYIpHV8V2Vz5FJwEhcHjl9HnlHxSi4Q"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Systems Modeling</span>
+<span class="text-xs text-on-surface-variant font-label">July 19, 2024</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary group-hover:text-secondary transition-colors leading-tight">
+                            The Calculus of Cellular Decision Making
+                        </h2>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed line-clamp-3">
+                            Revisiting Waddington’s epigenetic landscape through the lens of modern game theory and cellular automation.
+                        </p>
+</div>
+</article>
+</section>
+</div>
+<!-- Newsletter Section -->
+<section class="mt-32 rounded-3xl overflow-hidden relative bg-primary p-12 lg:p-24 text-center">
+<div class="absolute inset-0 dot-grid opacity-5"></div>
+<div class="max-w-2xl mx-auto relative z-10">
+<span class="font-label text-sm uppercase tracking-widest text-on-primary-container mb-6 block">The Correspondence</span>
+<h2 class="font-headline text-4xl lg:text-5xl font-bold text-on-primary mb-8 italic">Subscribe to the Lab Notebook</h2>
+<p class="font-body text-on-primary/70 mb-12 text-lg">
+                    Receive monthly dispatches featuring raw data specimens, unpublished abstracts, and reflections on the nature of complex systems.
+                </p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-white/10 border border-white/20 text-white placeholder:text-white/40 px-6 py-4 rounded-full focus:outline-none focus:bg-white/20 transition-all font-body" placeholder="Researcher Email Address" type="email"/>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-10 py-4 rounded-full font-label font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                        Join Registry
+                    </button>
+</form>
+<p class="mt-6 text-xs text-on-primary/40 font-label tracking-widest uppercase">
+                    Data privacy is handled with ethical rigor. No third-party disclosure.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-3xl mt-24 bg-[#f5f3ee] dark:bg-[#252622]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8">
+<div class="font-['Newsreader'] italic text-xl text-[#173626] dark:text-[#c1e8d6]">
+                The Living Laboratory
+            </div>
+<div class="flex flex-wrap justify-center gap-12">
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] dark:hover:text-white transition-colors" href="#">Institutional Disclosure</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#466a5b] opacity-70 hover:text-[#173626] dark:hover:text-white transition-colors" href="#">Data Ethics</a>
+</div>
+<div class="font-['Manrope'] text-xs text-[#466a5b] dark:text-[#c1e8d6] opacity-60">
+                © 2024 Systems Biology Research Lab. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
