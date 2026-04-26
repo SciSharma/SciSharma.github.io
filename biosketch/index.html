@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BioSketch | Ashish Sharma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary-fixed": "#c7ebd2",
+          "outline": "#727973",
+          "on-secondary-fixed-variant": "#2a4d40",
+          "on-secondary-container": "#466a5b",
+          "on-error-container": "#93000a",
+          "background": "#fbf9f4",
+          "tertiary-fixed": "#ffdcc2",
+          "surface-container-highest": "#e4e2dd",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#f5f3ee",
+          "on-primary-fixed": "#012112",
+          "primary-fixed-dim": "#accfb7",
+          "surface-variant": "#e4e2dd",
+          "on-primary-container": "#9bbda6",
+          "on-tertiary-fixed-variant": "#653e1b",
+          "surface": "#fbf9f4",
+          "surface-container": "#f0eee9",
+          "primary-container": "#2e4d3b",
+          "inverse-on-surface": "#f2f1ec",
+          "on-primary": "#ffffff",
+          "on-surface": "#1b1c19",
+          "on-surface-variant": "#424843",
+          "secondary-container": "#c1e8d6",
+          "inverse-primary": "#accfb7",
+          "on-secondary-fixed": "#002116",
+          "outline-variant": "#c2c8c1",
+          "error": "#ba1a1a",
+          "primary": "#173626",
+          "tertiary-fixed-dim": "#f4bb8e",
+          "tertiary-container": "#653e1b",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-high": "#eae8e3",
+          "surface-dim": "#dbdad5",
+          "on-tertiary-fixed": "#2e1500",
+          "on-background": "#1b1c19",
+          "on-tertiary-container": "#e1aa7e",
+          "inverse-surface": "#30312e",
+          "on-primary-fixed-variant": "#2e4d3b",
+          "tertiary": "#4a2806",
+          "on-error": "#ffffff",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#a8cfbd",
+          "secondary": "#426657",
+          "surface-tint": "#466552",
+          "secondary-fixed": "#c4ebd9",
+          "error-container": "#ffdad6",
+          "surface-bright": "#fbf9f4"
+        },
+        fontFamily: {
+          "headline": ["Newsreader"],
+          "body": ["Manrope"],
+          "label": ["Manrope"]
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+  }
+  .dot-grid {
+    background-image: radial-gradient(circle, #c2c8c1 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.15;
+  }
+  .timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 0.625rem;
+    top: 1.5rem;
+    bottom: -1.5rem;
+    width: 1px;
+    background: #c2c8c1;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 backdrop-blur-xl">
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="font-['Newsreader'] font-bold text-2xl text-[#173626]">Ashish Sharma | Researcher</a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] hover:text-[#173626] transition-colors duration-300" href="/">Home</a>
+      <a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] hover:text-[#173626] transition-colors duration-300" href="/research_projects/index.html">Projects</a>
+      <a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] hover:text-[#173626] transition-colors duration-300" href="/publications/index.html">Publications</a>
+      <a class="font-['Newsreader'] tracking-tight text-lg text-[#466a5b] hover:text-[#173626] transition-colors duration-300" href="/field_notes_blog/index.html">Blogs</a>
+      <a class="font-['Newsreader'] tracking-tight text-lg text-[#173626] border-b-2 border-[#173626] pb-1" href="/biosketch/index.html">BioSketch</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="mailto:p22bb002@iitj.ac.in" class="hidden md:block px-6 py-2 bg-primary text-on-primary rounded-full font-label text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">Contact</a>
+      <button class="text-[#173626]"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8">
+
+  <!-- Hero -->
+  <section class="mb-20 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+    <div class="md:col-span-8">
+      <span class="font-label text-sm uppercase tracking-[0.3em] text-tertiary block mb-4">Biographical Sketch</span>
+      <h1 class="font-headline text-6xl md:text-7xl tracking-tight text-primary leading-[1.1] mb-6">Ashish <span class="italic font-normal">Sharma</span></h1>
+      <p class="font-headline italic text-xl text-on-surface-variant mb-2">Doctoral Researcher · Bioscience &amp; Bioengineering</p>
+      <p class="font-body text-on-surface-variant mb-1">Department of Bioscience and Bioengineering</p>
+      <p class="font-body text-on-surface-variant mb-1">Indian Institute of Technology Jodhpur, India</p>
+      <a href="mailto:p22bb002@iitj.ac.in" class="font-body text-primary hover:underline mt-1 inline-block">p22bb002@iitj.ac.in</a>
+    </div>
+    <div class="md:col-span-4 flex flex-col gap-4">
+      <!-- CV Download -->
+      <a href="/cv.pdf" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-on-primary rounded-full font-label text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">
+        <span class="material-symbols-outlined text-lg">download</span>
+        Download CV (PDF)
+      </a>
+      <!-- Social Profiles -->
+      <div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden">
+        <div class="absolute inset-0 dot-grid"></div>
+        <div class="relative z-10">
+          <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-4">Academic Profiles</span>
+          <div class="flex flex-col gap-3">
+            <a href="https://github.com/SciSharma" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-2 bg-surface-container-lowest rounded-full hover:bg-surface-container-high transition-colors group">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span class="font-label text-sm text-on-surface font-medium group-hover:text-primary transition-colors">GitHub</span>
+              <span class="material-symbols-outlined text-sm text-outline ml-auto">open_in_new</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ashish-sharma-544471247" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-2 bg-surface-container-lowest rounded-full hover:bg-surface-container-high transition-colors group">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              <span class="font-label text-sm text-on-surface font-medium group-hover:text-primary transition-colors">LinkedIn</span>
+              <span class="material-symbols-outlined text-sm text-outline ml-auto">open_in_new</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=AshishSharmaIITJ" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-2 bg-surface-container-lowest rounded-full hover:bg-surface-container-high transition-colors group">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+              </svg>
+              <span class="font-label text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Google Scholar</span>
+              <span class="material-symbols-outlined text-sm text-outline ml-auto">open_in_new</span>
+            </a>
+            <a href="https://orcid.org" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-2 bg-surface-container-lowest rounded-full hover:bg-surface-container-high transition-colors group">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.828-3.722h-2.341z"/>
+              </svg>
+              <span class="font-label text-sm text-on-surface font-medium group-hover:text-primary transition-colors">ORCID</span>
+              <span class="material-symbols-outlined text-sm text-outline ml-auto">open_in_new</span>
+            </a>
+            <a href="https://www.researchgate.net/profile/Ashish-Sharma" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-2 bg-surface-container-lowest rounded-full hover:bg-surface-container-high transition-colors group">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.195 12.195 0 0 0-.32 2.701v1.43c-.468-.19-.985-.285-1.552-.285-1.23 0-2.252.44-3.07 1.32-.817.878-1.225 1.981-1.225 3.307 0 1.354.408 2.458 1.226 3.31.816.851 1.838 1.278 3.069 1.278 1.163 0 2.11-.424 2.845-1.269v1.071c0 1.327-.292 2.317-.876 2.968-.584.65-1.482.977-2.692.977a11.2 11.2 0 0 1-2.405-.285 11.2 11.2 0 0 1-1.876-.58l-.47 2.198c.543.26 1.2.48 1.97.658.77.177 1.607.266 2.514.266 2.003 0 3.497-.516 4.482-1.547.985-1.031 1.479-2.647 1.479-4.847V4.946c0-.834.074-1.468.221-1.903.147-.435.4-.652.758-.652.208 0 .416.038.626.113.21.075.409.18.595.311l.525-2.082A4.13 4.13 0 0 0 21.193.4 4.567 4.567 0 0 0 19.586 0zm-7.56 8.14c.653 0 1.176.228 1.568.685.391.457.587 1.07.587 1.836 0 .791-.196 1.414-.587 1.87-.392.456-.915.683-1.568.683-.648 0-1.167-.227-1.558-.683-.392-.456-.587-1.079-.587-1.87 0-.766.195-1.379.587-1.836.39-.457.91-.685 1.558-.685z"/>
+              </svg>
+              <span class="font-label text-sm text-on-surface font-medium group-hover:text-primary transition-colors">ResearchGate</span>
+              <span class="material-symbols-outlined text-sm text-outline ml-auto">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Interests -->
+  <section class="mb-20 bg-surface-container-low rounded-xl p-10 relative overflow-hidden">
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="relative z-10">
+      <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-4">Research Interests</span>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Genomics</span>
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Systems Biology</span>
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Rare Diseases</span>
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Phenomics</span>
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Bioinformatics</span>
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Integrative Medicine</span>
+        <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-bold">Translational Biology</span>
+        <span class="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-label text-sm font-bold">Ciliopathies</span>
+        <span class="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-label text-sm font-bold">Multi-Omics</span>
+        <span class="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-label text-sm font-bold">Network Biology</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+
+    <!-- Education -->
+    <section>
+      <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-8">Education</span>
+      <div class="space-y-8">
+        <!-- PhD -->
+        <div class="relative pl-8 timeline-line">
+          <div class="absolute left-0 top-1.5 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-on-primary"></div>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-headline text-xl font-bold text-primary leading-tight">Doctor of Philosophy (Ph.D.)</h3>
+              <span class="font-label text-xs text-on-secondary-container bg-secondary-container px-3 py-1 rounded-full whitespace-nowrap">2022 – Present</span>
+            </div>
+            <p class="font-body text-sm font-semibold text-on-surface mb-1">Bioscience and Bioengineering</p>
+            <p class="font-body text-sm text-on-surface-variant mb-3">Indian Institute of Technology Jodhpur, India</p>
+            <p class="font-body text-xs text-on-surface-variant leading-relaxed mb-2"><span class="font-semibold text-on-surface">Thesis:</span> Understanding the Links from Cellular to System-Level Phenotypes: Exploring Ciliopathies</p>
+            <p class="font-body text-xs text-on-surface-variant"><span class="font-semibold text-on-surface">Supervisor:</span> Prof. Mitali Mukerji</p>
+          </div>
+        </div>
+        <!-- MSc -->
+        <div class="relative pl-8 timeline-line">
+          <div class="absolute left-0 top-1.5 w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-on-primary"></div>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-headline text-xl font-bold text-primary leading-tight">Master of Science (M.Sc.)</h3>
+              <span class="font-label text-xs text-outline bg-surface-container-high px-3 py-1 rounded-full whitespace-nowrap">2022</span>
+            </div>
+            <p class="font-body text-sm font-semibold text-on-surface mb-1">Zoology — Specialization in Environmental Sciences</p>
+            <p class="font-body text-sm text-on-surface-variant">University of Rajasthan, Jaipur, India</p>
+            <p class="font-body text-xs text-on-surface-variant mt-2">First Division</p>
+          </div>
+        </div>
+        <!-- BSc -->
+        <div class="relative pl-8">
+          <div class="absolute left-0 top-1.5 w-5 h-5 rounded-full bg-outline-variant flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-outline"></div>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-headline text-xl font-bold text-primary leading-tight">Bachelor of Science (B.Sc.)</h3>
+              <span class="font-label text-xs text-outline bg-surface-container-high px-3 py-1 rounded-full whitespace-nowrap">2020</span>
+            </div>
+            <p class="font-body text-sm font-semibold text-on-surface mb-1">Biology (Zoology, Botany, Chemistry)</p>
+            <p class="font-body text-sm text-on-surface-variant">University of Rajasthan, Jaipur, India</p>
+            <p class="font-body text-xs text-on-surface-variant mt-2">First Division</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Fellowships -->
+    <section>
+      <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-8">Honors, Awards &amp; Fellowships</span>
+      <div class="space-y-4">
+        <div class="bg-surface-container-lowest rounded-xl p-6 flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-secondary-container text-lg">military_tech</span>
+          </div>
+          <div>
+            <h4 class="font-label font-bold text-primary text-sm mb-1">Senior Research Fellowship (SRF)</h4>
+            <p class="font-body text-xs text-on-surface-variant">University Grants Commission (UGC), India</p>
+            <span class="font-label text-[10px] uppercase tracking-widest text-tertiary">2024 – 2027</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-6 flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-secondary-container text-lg">military_tech</span>
+          </div>
+          <div>
+            <h4 class="font-label font-bold text-primary text-sm mb-1">Junior Research Fellowship (JRF)</h4>
+            <p class="font-body text-xs text-on-surface-variant">University Grants Commission (UGC), India</p>
+            <span class="font-label text-[10px] uppercase tracking-widest text-tertiary">2022 – 2024</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-6 flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-tertiary-fixed-variant text-lg">workspace_premium</span>
+          </div>
+          <div>
+            <h4 class="font-label font-bold text-primary text-sm mb-1">CSIR–UGC NET, Life Sciences</h4>
+            <p class="font-body text-xs text-on-surface-variant">All India Rank (AIR) 167</p>
+            <span class="font-label text-[10px] uppercase tracking-widest text-tertiary">2022</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-6 flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-tertiary-fixed-variant text-lg">workspace_premium</span>
+          </div>
+          <div>
+            <h4 class="font-label font-bold text-primary text-sm mb-1">GATE, Life Sciences</h4>
+            <p class="font-body text-xs text-on-surface-variant">All India Rank (AIR) 970 · Score: 570</p>
+            <span class="font-label text-[10px] uppercase tracking-widest text-tertiary">2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Publications -->
+  <section class="mb-20">
+    <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-8">Publications &amp; Preprints</span>
+    <div class="space-y-6">
+      <div class="bg-surface-container-lowest rounded-xl p-8 group hover:bg-surface-container-low transition-colors">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Phenomics</span>
+          <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold uppercase tracking-widest">Accepted · 2025</span>
+        </div>
+        <h3 class="font-headline text-2xl text-on-surface group-hover:text-primary transition-colors mb-3 leading-snug">
+          Ayurveda-based phenotype annotation integrated with an expectation–maximization algorithm reveals six biological clusters of rare diseases with implications for resolving ciliopathies.
+        </h3>
+        <p class="font-body text-sm text-on-surface-variant mb-4">
+          Joshi, A., Jangir, D., <strong>Sharma, A.</strong>, et al. · bioRxiv (Preprint); Accepted in <em>Phenomics</em>
+        </p>
+        <a href="https://doi.org/10.1101/2024.09.13.612844" target="_blank" rel="noopener noreferrer"
+           class="font-label text-xs font-bold text-primary flex items-center gap-2 hover:underline w-fit">
+          doi:10.1101/2024.09.13.612844
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-8 group hover:bg-surface-container-low transition-colors">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">EcoEvoRxiv</span>
+          <span class="px-3 py-1 bg-surface-container-high text-outline rounded-full text-[10px] font-bold uppercase tracking-widest">Under Revision · 2025</span>
+        </div>
+        <h3 class="font-headline text-2xl text-on-surface group-hover:text-primary transition-colors mb-3 leading-snug">
+          Rethinking stress through an ecological genomic lens: From predatory pressures to modern mismatch.
+        </h3>
+        <p class="font-body text-sm text-on-surface-variant mb-4">
+          Mukherjee, M., <strong>Sharma, A.</strong>, et al. · <em>EcoEvoRxiv</em> (Preprint; under revision)
+        </p>
+        <a href="https://doi.org/10.32942/X20H0S" target="_blank" rel="noopener noreferrer"
+           class="font-label text-xs font-bold text-primary flex items-center gap-2 hover:underline w-fit">
+          doi:10.32942/X20H0S
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-8 group hover:bg-surface-container-low transition-colors">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Research Square</span>
+          <span class="px-3 py-1 bg-surface-container-high text-outline rounded-full text-[10px] font-bold uppercase tracking-widest">Under Revision · 2026</span>
+        </div>
+        <h3 class="font-headline text-2xl text-on-surface group-hover:text-primary transition-colors mb-3 leading-snug">
+          TAS2R38 polymorphism and bitter taste perception: Implications for Satmaya and Upashaya-Anupashaya beyond Prakriti.
+        </h3>
+        <p class="font-body text-sm text-on-surface-variant mb-4">
+          Sharma, S., Sonawane, O. A., Jain, R., <strong>Sharma, A.</strong>, et al. · <em>Research Square</em> (Preprint; under revision)
+        </p>
+        <a href="https://doi.org/10.21203/rs.3.rs-9278930/v1" target="_blank" rel="noopener noreferrer"
+           class="font-label text-xs font-bold text-primary flex items-center gap-2 hover:underline w-fit">
+          doi:10.21203/rs.3.rs-9278930/v1
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-6">Technical Skills</span>
+      <div class="space-y-5">
+        <div class="bg-surface-container-lowest rounded-xl p-5">
+          <h4 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-3">Programming &amp; Data Analysis</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">R</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Python</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Shell Scripting</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">LaTeX</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-5">
+          <h4 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-3">Bioinformatics Tools</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Seurat</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Scanpy</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Cell Ranger</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">STAR</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">DESeq2</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Cytoscape</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">BioMart</span>
+            <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">NetworkX</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-5">
+          <h4 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-3">Wet-Lab Techniques</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold">Genomic DNA Isolation</span>
+            <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold">PBMC Isolation</span>
+            <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold">PCR</span>
+            <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold">Gel Electrophoresis</span>
+            <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold">NextSeq NGS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div>
+      <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-6">Certifications &amp; Training</span>
+      <div class="space-y-3">
+        <div class="bg-surface-container-lowest rounded-xl p-5 flex gap-4 items-start">
+          <span class="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5">verified</span>
+          <div>
+            <h4 class="font-label text-sm font-bold text-primary">Data Analysis for Systems Biology</h4>
+            <p class="font-body text-xs text-on-surface-variant">RCB India + UC San Diego · 5-week intensive program · 2026</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-5 flex gap-4 items-start">
+          <span class="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5">verified</span>
+          <div>
+            <h4 class="font-label text-sm font-bold text-primary">Introduction to Genomic Technologies</h4>
+            <p class="font-body text-xs text-on-surface-variant">Johns Hopkins University · 2026</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-5 flex gap-4 items-start">
+          <span class="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5">verified</span>
+          <div>
+            <h4 class="font-label text-sm font-bold text-primary">The Data Scientist's Toolbox</h4>
+            <p class="font-body text-xs text-on-surface-variant">Johns Hopkins University · 2026</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-5 flex gap-4 items-start">
+          <span class="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5">verified</span>
+          <div>
+            <h4 class="font-label text-sm font-bold text-primary">NextSeq™ 1000/2000 Sequencing System Training</h4>
+            <p class="font-body text-xs text-on-surface-variant">Illumina · 2024</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-5 flex gap-4 items-start">
+          <span class="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5">verified</span>
+          <div>
+            <h4 class="font-label text-sm font-bold text-primary">Biology Meets Programming: Bioinformatics for Beginners</h4>
+            <p class="font-body text-xs text-on-surface-variant">UC San Diego · 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conferences -->
+  <section class="mb-20">
+    <span class="font-label text-xs uppercase tracking-widest text-tertiary block mb-6">Conferences &amp; Presentations</span>
+    <div class="space-y-4">
+      <div class="bg-surface-container-lowest rounded-xl p-6 flex gap-4 items-start">
+        <span class="material-symbols-outlined text-tertiary text-xl flex-shrink-0 mt-0.5">podium</span>
+        <div>
+          <h4 class="font-label text-sm font-bold text-primary">Poster Presentation · Molecular Motors, Transport, and Tracks (M2T2) Conference</h4>
+          <p class="font-body text-xs text-on-surface-variant">Indian Institute of Technology Jodhpur, Jodhpur, India · 2025</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 flex gap-4 items-start">
+        <span class="material-symbols-outlined text-tertiary text-xl flex-shrink-0 mt-0.5">podium</span>
+        <div>
+          <h4 class="font-label text-sm font-bold text-primary">Poster Presentation · 49th Annual Meeting of the Indian Society of Human Genetics (ISHG)</h4>
+          <p class="font-body text-xs text-on-surface-variant">International Conclave on Neurogenetics · NIMHANS, Bengaluru, India · 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Embed -->
+  <section class="mb-12">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-label text-xs uppercase tracking-widest text-tertiary">Curriculum Vitae</span>
+      <a href="/cv.pdf" target="_blank"
+         class="flex items-center gap-2 px-6 py-2 bg-primary text-on-primary rounded-full font-label text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">
+        <span class="material-symbols-outlined text-sm">download</span>
+        Download PDF
+      </a>
+    </div>
+    <div class="bg-surface-container-lowest rounded-xl overflow-hidden" style="height: 800px;">
+      <embed src="/cv.pdf" type="application/pdf" width="100%" height="100%"/>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full rounded-t-3xl mt-16 bg-[#f5f3ee]">
+  <div class="max-w-screen-2xl mx-auto px-12 py-16 flex flex-col gap-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col gap-1">
+        <span class="font-['Newsreader'] italic text-xl text-[#173626]">Ashish Sharma</span>
+        <p class="font-['Manrope'] text-sm text-[#466a5b] opacity-70">Doctoral Researcher · IIT Jodhpur</p>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="https://github.com/SciSharma" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-surface-container rounded-full font-label text-xs font-bold text-[#466a5b] hover:text-[#173626] hover:bg-surface-container-high transition-colors uppercase tracking-wider">GitHub</a>
+        <a href="https://www.linkedin.com/in/ashish-sharma-544471247" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-surface-container rounded-full font-label text-xs font-bold text-[#466a5b] hover:text-[#173626] hover:bg-surface-container-high transition-colors uppercase tracking-wider">LinkedIn</a>
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-surface-container rounded-full font-label text-xs font-bold text-[#466a5b] hover:text-[#173626] hover:bg-surface-container-high transition-colors uppercase tracking-wider">Google Scholar</a>
+        <a href="https://orcid.org" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-surface-container rounded-full font-label text-xs font-bold text-[#466a5b] hover:text-[#173626] hover:bg-surface-container-high transition-colors uppercase tracking-wider">ORCID</a>
+        <a href="https://www.researchgate.net" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-surface-container rounded-full font-label text-xs font-bold text-[#466a5b] hover:text-[#173626] hover:bg-surface-container-high transition-colors uppercase tracking-wider">ResearchGate</a>
+      </div>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-['Manrope'] text-xs text-[#466a5b] opacity-60">© 2025 Ashish Sharma · All rights reserved.</p>
+      <a href="mailto:p22bb002@iitj.ac.in" class="font-['Manrope'] text-xs text-[#466a5b] opacity-70 hover:opacity-100 transition-opacity">p22bb002@iitj.ac.in</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
