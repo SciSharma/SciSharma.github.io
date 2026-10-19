@@ -180,17 +180,21 @@
 </div>
 <div class="col-span-12 lg:col-span-5 relative">
 <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative">
-<img id="hero-slider-image" class="w-full h-full object-cover transition-opacity duration-500" alt="Portrait slide" src="" loading="lazy"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
-<button id="hero-slider-prev" type="button" aria-label="Previous slide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 text-primary hover:bg-surface-container-lowest transition-colors z-10 flex items-center justify-center">
+<img id="hero-slider-bg" class="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl brightness-75 transition-opacity duration-500" alt="" src="" aria-hidden="true" loading="lazy"/>
+<div class="absolute inset-0 bg-black/20 z-[1]"></div>
+<div class="absolute inset-0 z-[2] p-3 md:p-4 flex items-center justify-center">
+<img id="hero-slider-image" class="w-full h-full object-contain transition-opacity duration-500" alt="Portrait slide" src="" loading="lazy"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/35 to-transparent z-[3]"></div>
+<button id="hero-slider-prev" type="button" aria-label="Previous slide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 text-primary hover:bg-surface-container-lowest transition-colors z-20 flex items-center justify-center">
 <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
 </button>
-<button id="hero-slider-next" type="button" aria-label="Next slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 text-primary hover:bg-surface-container-lowest transition-colors z-10 flex items-center justify-center">
+<button id="hero-slider-next" type="button" aria-label="Next slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 text-primary hover:bg-surface-container-lowest transition-colors z-20 flex items-center justify-center">
 <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
 </button>
-<div id="hero-slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2"></div>
+<div id="hero-slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
 <!-- Floating Specimen Chip -->
-<div class="absolute bottom-6 right-6 glass-panel p-6 rounded-xl max-w-[240px]">
+<div class="absolute bottom-6 right-6 glass-panel p-6 rounded-xl max-w-[240px] z-20">
 <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">PhD Research Focus</span>
 <p class="font-headline text-lg italic text-on-surface mt-2">Common molecular roots of rare ciliopathies</p>
 </div>
@@ -343,11 +347,12 @@
 </footer>
 <script>
   (function () {
+    const sliderBackground = document.getElementById("hero-slider-bg");
     const sliderImage = document.getElementById("hero-slider-image");
     const prevButton = document.getElementById("hero-slider-prev");
     const nextButton = document.getElementById("hero-slider-next");
     const dotsContainer = document.getElementById("hero-slider-dots");
-    if (!sliderImage || !prevButton || !nextButton || !dotsContainer) return;
+    if (!sliderBackground || !sliderImage || !prevButton || !nextButton || !dotsContainer) return;
 
     const localFolderSlides = [
       "/assets/home-slider/Ashish%20Sharma%20profile%20photo.png",
@@ -390,10 +395,15 @@
     const renderSlide = () => {
       if (!slides.length) return;
       const activeSrc = slides[currentIndex];
+      sliderBackground.style.opacity = "0.8";
       sliderImage.style.opacity = "0.6";
+      sliderBackground.onload = () => {
+        sliderBackground.style.opacity = "1";
+      };
       sliderImage.onload = () => {
         sliderImage.style.opacity = "1";
       };
+      sliderBackground.src = activeSrc;
       sliderImage.src = activeSrc;
       sliderImage.alt = `Portrait slide ${currentIndex + 1}`;
       Array.from(dotsContainer.children).forEach((dot, index) => {
