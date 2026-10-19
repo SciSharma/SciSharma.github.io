@@ -349,6 +349,19 @@
     const dotsContainer = document.getElementById("hero-slider-dots");
     if (!sliderImage || !prevButton || !nextButton || !dotsContainer) return;
 
+    const localFolderSlides = [
+      "/assets/home-slider/Ashish%20Sharma%20profile%20photo.png",
+      "/assets/home-slider/Ashish%20best%20title%20award.png",
+      "/assets/home-slider/Protect%20Heritage.jpg",
+      "/assets/home-slider/Untitled%20Project%20%281%29.jpg",
+      "/assets/home-slider/WhatsApp%20Image%202025-01-21%20at%2023.36.19_490e990f.jpg",
+      "/assets/home-slider/WhatsApp%20Image%202025-01-21%20at%2023.36.20_87036220.jpg",
+      "/assets/home-slider/WhatsApp%20Image%202025-01-22%20at%2021.32.19_8f6aa8b9.jpg",
+      "/assets/home-slider/WhatsApp%20Image%202025-01-23%20at%2000.00.25_503fd24e.jpg",
+      "/assets/home-slider/WhatsApp%20Image%202026-02-16%20at%2022.37.18.jpeg",
+      "/assets/home-slider/ashish_personal_lab.jpg"
+    ];
+
     const fallbackSlides = [
       "https://github.com/user-attachments/assets/60a4f58f-332f-4686-9dfd-c1349b9a740a",
       "https://github.com/user-attachments/assets/ab2c1a0f-6ad2-44c1-894c-325ba9916d1b",
@@ -447,7 +460,7 @@
 
     const initSlider = async () => {
       const repoSlides = await loadSlidesFromRepoDirectory();
-      slides = repoSlides.length ? repoSlides : fallbackSlides;
+      slides = repoSlides.length ? repoSlides : (localFolderSlides.length ? localFolderSlides : fallbackSlides);
       if (!slides.length) return;
       createDots();
       bindControls();
