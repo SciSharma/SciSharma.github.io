@@ -355,8 +355,10 @@
       "https://github.com/user-attachments/assets/3aab04c8-57a7-4291-989e-2f6e3a446a75",
       "https://github.com/user-attachments/assets/e5e9caa8-c1ac-4d71-b804-f4c3d078442a"
     ];
-    const repoSlidesApi = "https://api.github.com/repos/SciSharma/SciSharma.github.io/contents/assets/home-slider";
-    const imageFilePattern = /\.(png|jpe?g|webp|gif|avif|svg)$/i;
+    const repoInfo = { owner: "SciSharma", name: "SciSharma.github.io" };
+    const branchCandidates = ["main", "master", "gh-pages"];
+    const imageFilePattern = /\.(png|jpe?g|webp|gif|avif|svg|heic|heif|bmp)$/i;
+    const ignoredFiles = new Set([".gitkeep", "slides.json", "readme.md"]);
     const autoSlideMs = 4500;
 
     let slides = [];
@@ -419,17 +421,28 @@
     };
 
     const loadSlidesFromRepoDirectory = async () => {
-      try {
-        const response = await fetch(repoSlidesApi, { headers: { Accept: "application/vnd.github+json" } });
-        if (!response.ok) throw new Error("Failed to load slider directory");
-        const contentEntries = await response.json();
-        if (!Array.isArray(contentEntries)) throw new Error("Invalid slider directory response");
-        return contentEntries
-          .filter((entry) => entry.type === "file" && imageFilePattern.test(entry.name))
-          .map((entry) => entry.download_url || `/${entry.path}`);
-      } catch {
-        return [];
+      for (const ref of branchCandidates) {
+        try {
+          const apiUrl = `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.name}/contents/assets/home-slider?ref=${ref}&_=${Date.now()}`;
+          const response = await fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } });
+          if (!response.ok) continue;
+          const contentEntries = await response.json();
+          if (!Array.isArray(contentEntries)) continue;
+          const discoveredSlides = contentEntries
+            .filter((entry) => {
+              if (entry.type !== "file") return false;
+              const lowerName = entry.name.toLowerCase();
+              if (ignoredFiles.has(lowerName)) return false;
+              return imageFilePattern.test(entry.name) || !entry.name.includes(".");
+            })
+            .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" }))
+            .map((entry) => `https://raw.githubusercontent.com/${repoInfo.owner}/${repoInfo.name}/${ref}/${entry.path}`);
+          if (discoveredSlides.length) return discoveredSlides;
+        } catch {
+          // Try the next ref.
+        }
       }
+      return [];
     };
 
     const initSlider = async () => {
