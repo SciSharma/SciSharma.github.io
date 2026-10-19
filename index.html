@@ -180,8 +180,15 @@
 </div>
 <div class="col-span-12 lg:col-span-5 relative">
 <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative">
-<img class="w-full h-full object-cover" alt="Portrait of Ashish Sharma" src="https://github.com/user-attachments/assets/60a4f58f-332f-4686-9dfd-c1349b9a740a"/>
+<img id="hero-slider-image" class="w-full h-full object-cover transition-opacity duration-500" alt="Portrait slide" src="" loading="lazy"/>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<button id="hero-slider-prev" type="button" aria-label="Previous slide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 text-primary hover:bg-surface-container-lowest transition-colors z-10 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button id="hero-slider-next" type="button" aria-label="Next slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 text-primary hover:bg-surface-container-lowest transition-colors z-10 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<div id="hero-slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2"></div>
 <!-- Floating Specimen Chip -->
 <div class="absolute bottom-6 right-6 glass-panel p-6 rounded-xl max-w-[240px]">
 <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">PhD Research Focus</span>
@@ -334,4 +341,108 @@
 </div>
 </div>
 </footer>
+<script>
+  (function () {
+    const sliderImage = document.getElementById("hero-slider-image");
+    const prevButton = document.getElementById("hero-slider-prev");
+    const nextButton = document.getElementById("hero-slider-next");
+    const dotsContainer = document.getElementById("hero-slider-dots");
+    if (!sliderImage || !prevButton || !nextButton || !dotsContainer) return;
+
+    const fallbackSlides = [
+      "https://github.com/user-attachments/assets/60a4f58f-332f-4686-9dfd-c1349b9a740a",
+      "https://github.com/user-attachments/assets/ab2c1a0f-6ad2-44c1-894c-325ba9916d1b",
+      "https://github.com/user-attachments/assets/3aab04c8-57a7-4291-989e-2f6e3a446a75",
+      "https://github.com/user-attachments/assets/e5e9caa8-c1ac-4d71-b804-f4c3d078442a"
+    ];
+    const repoSlidesApi = "https://api.github.com/repos/SciSharma/SciSharma.github.io/contents/assets/home-slider";
+    const imageFilePattern = /\.(png|jpe?g|webp|gif|avif|svg)$/i;
+    const autoSlideMs = 4500;
+
+    let slides = [];
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+
+    const startAutoSlide = () => {
+      if (!slides.length) return;
+      clearInterval(autoSlideTimer);
+      autoSlideTimer = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        renderSlide();
+      }, autoSlideMs);
+    };
+
+    const renderSlide = () => {
+      if (!slides.length) return;
+      const activeSrc = slides[currentIndex];
+      sliderImage.style.opacity = "0.6";
+      sliderImage.onload = () => {
+        sliderImage.style.opacity = "1";
+      };
+      sliderImage.src = activeSrc;
+      sliderImage.alt = `Portrait slide ${currentIndex + 1}`;
+      Array.from(dotsContainer.children).forEach((dot, index) => {
+        dot.className = index === currentIndex
+          ? "w-2.5 h-2.5 rounded-full bg-on-primary"
+          : "w-2.5 h-2.5 rounded-full bg-surface-container-highest/80";
+      });
+    };
+
+    const createDots = () => {
+      dotsContainer.innerHTML = "";
+      slides.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.ariaLabel = `Go to slide ${index + 1}`;
+        dot.className = "w-2.5 h-2.5 rounded-full bg-surface-container-highest/80";
+        dot.addEventListener("click", () => {
+          currentIndex = index;
+          renderSlide();
+          startAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    };
+
+    const bindControls = () => {
+      prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        renderSlide();
+        startAutoSlide();
+      });
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        renderSlide();
+        startAutoSlide();
+      });
+    };
+
+    const loadSlidesFromRepoDirectory = async () => {
+      try {
+        const response = await fetch(repoSlidesApi, { headers: { Accept: "application/vnd.github+json" } });
+        if (!response.ok) throw new Error("Failed to load slider directory");
+        const contentEntries = await response.json();
+        if (!Array.isArray(contentEntries)) throw new Error("Invalid slider directory response");
+        return contentEntries
+          .filter((entry) => entry.type === "file" && imageFilePattern.test(entry.name))
+          .map((entry) => entry.download_url || `/${entry.path}`);
+      } catch {
+        return [];
+      }
+    };
+
+    const initSlider = async () => {
+      const repoSlides = await loadSlidesFromRepoDirectory();
+      slides = repoSlides.length ? repoSlides : fallbackSlides;
+      if (!slides.length) return;
+      createDots();
+      bindControls();
+      renderSlide();
+      startAutoSlide();
+    };
+
+    initSlider();
+  })();
+</script>
 </body></html>
